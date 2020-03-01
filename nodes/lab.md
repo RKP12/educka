@@ -21,4 +21,10 @@ kubectl drain kube-node              # Drain kube-node in preparation for mainte
 kubectl drain kube-node --ignore-daemonsets --force  
 kubectl uncordon kube-node           # Mark kube-node as schedulable
 kubectl delete node kube-node        # remove node from cluster
-```
+kubectl run nginx --image=nginx --generator=run-pod/v1 #Create a new pod with the NGINX image
+kubectl get pods                      # count how many pod created now 
+kubectl describe pod newpod-<id>' or 'kubectl get pods -o wide' and look under the containers section.   #What is the image used to create the new pods? You must look at one of the new pods in detail to figure this out.
+kubectl describe pod newpod-<id>     #Which nodes are these pods placed on?
+kubectl delete pod webapp            #delete webapp pod
+kubectl run redis --image=redis123 --generator=run-pod/v1 #Create a new pod with the name 'redis' and with the image 'redis123'
+kubectl apply or kubectl edit pod redis command. #Now fix the image on the pod to 'redis'. Update the pod-definition file
