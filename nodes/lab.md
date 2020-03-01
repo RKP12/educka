@@ -28,3 +28,7 @@ kubectl describe pod newpod-<id>     #Which nodes are these pods placed on?
 kubectl delete pod webapp            #delete webapp pod
 kubectl run redis --image=redis123 --generator=run-pod/v1 #Create a new pod with the name 'redis' and with the image 'redis123'
 kubectl apply or kubectl edit pod redis command. #Now fix the image on the pod to 'redis'. Update the pod-definition file
+kubectl get replicaset               #How many ReplicaSets exist on the system
+kubectl describe replicaset           #What is the image used to create the pods in the new-replica-set?
+kubectl get replicaset              #How many PODs are READY in the new-replica-set?
+kubectl describe pods               #and see the image related any error mesasage like failed pulled
